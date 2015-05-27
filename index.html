@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Acelerometro</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+
+		function onSuccess(acceleration) {
+			alert('Acceleration X: ' + acceleration.x + '\n' +
+				  'Acceleration Y: ' + acceleration.y + '\n' +
+				  'Acceleration Z: ' + acceleration.z + '\n' +
+				  'Timestamp: '      + acceleration.timestamp + '\n');
+		};
+		
+		function onError() {
+			alert('onError!');
+		};
+		
+		var options = { frequency: 3000 };  // Update every 3 seconds
+		
+		var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
