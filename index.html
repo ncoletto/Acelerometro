@@ -15,11 +15,12 @@
     //
 
 		function onSuccess(acceleration) {
-			alert('Acceleration X: ' + acceleration.x + '\n' +
-				  'Acceleration Y: ' + acceleration.y + '\n' +
-				  'Acceleration Z: ' + acceleration.z + '\n' +
-				  'Timestamp: '      + acceleration.timestamp + '\n');
-		};
+			
+			if(acceleration.y>15) {
+				
+				alert('Caida libre')
+			
+		}
 		
 		function onError() {
 			alert('onError!');
