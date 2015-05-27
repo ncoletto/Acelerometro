@@ -16,7 +16,9 @@
 
 		function onSuccess(acceleration) {
 			
-			if(acceleration.y>15) {
+			document.getElementById("texto").innerHTML = acceleration.y;
+			
+			if(acceleration.y > 12) {
 				
 				alert('Caida libre')
 			
@@ -28,7 +30,7 @@
 		
 		function arrancar() {
 		
-		var options = { frequency: 3000 };  // Update every 3 seconds
+		var options = { frequency: 1000 };  // Update every 3 seconds
 		
 		var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 
@@ -37,6 +39,7 @@
     </script>
   </head>
   <body>
+<h1 id="texto"></h1>
 
   </body>
 </html>
